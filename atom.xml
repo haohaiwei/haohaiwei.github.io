@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-15T11:57:09.916Z</updated>
+  <updated>2020-05-16T11:45:26.007Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,15 +21,20 @@
     <link href="http://yoursite.com/2020/05/15/web/"/>
     <id>http://yoursite.com/2020/05/15/web/</id>
     <published>2020-05-15T11:53:46.000Z</published>
-    <updated>2020-05-15T11:57:09.916Z</updated>
+    <updated>2020-05-16T11:45:26.007Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="1-什么是跨域"><a href="#1-什么是跨域" class="headerlink" title="1. 什么是跨域?"></a>1. 什么是跨域?</h2><h2 id="2-你是怎么解决跨域请求的？"><a href="#2-你是怎么解决跨域请求的？" class="headerlink" title="2. 你是怎么解决跨域请求的？"></a>2. 你是怎么解决跨域请求的？</h2><h2 id="3-json-和xml的区别"><a href="#3-json-和xml的区别" class="headerlink" title="3. json 和xml的区别?"></a>3. json 和xml的区别?</h2>]]></content>
+    <content type="html"><![CDATA[<p><strong>1. 什么是跨域</strong></p><p>由于同源策略的限制，浏览器不能执行其他网站的脚本</p><ul><li>同源策略（same-origin policy)</li></ul><p>1995年，同源策略由netscape公司引入，目前所有浏览器都实行了这个策略，它最初的含义是指：A网页的cookie，B网页不能打开，除非这两个网页同源，所谓的同源指下面三个相同</p><ol><li>协议相同</li><li>域名相同</li><li>端口相同</li></ol><ul><li>限制的行为</li></ul><ol><li>Cookie、LocalStorage 和 IndexDB 无法读取</li><li>DOM无法获得</li><li>ajax请求不能发送</li></ol><ul><li>跨域的判定</li></ul><ol><li>访问一个页面时，浏览器先根据同源策略对前端页面和后台交互地址做匹配，若同源，则直接发送数据请求；若不同源，则发送跨域请求。</li><li>服务器解析程序收到浏览器跨域请求后，根据自身配置返回对应文件头。若未配置过任何允许跨域，则文件头里不包含<code>Access-Control-Allow-origin</code>字段，若配置过域名，则返回<code>Access-Control-Allow-origin</code>+ <code>对应配置规则里的域名的方式</code>。</li><li>浏览器根据接受到的http文件头里的<code>Access-Control-Allow-origin</code>字段做匹配，若无该字段，说明不允许跨域；若有该字段，则对字段内容和当前域名做比对，如果同源，则说明可以跨域，浏览器发送该请求；若不同源，则说明该域名不可跨域，不发送请求</li></ol><p><strong>2. 你有解决过跨域的请求么</strong></p><p><strong>3. json和xml有什么区别</strong></p><p>1、JSON是JavaScript Object Notation；XML是可扩展标记语言。</p><p>2、JSON是基于JavaScript语言；XML源自SGML。</p><p>3、JSON是一种表示对象的方式；XML是一种标记语言，使用标记结构来表示数据项。</p><p>4、JSON不提供对命名空间的任何支持；XML支持名称空间。</p><p>5、JSON支持数组；XML不支持数组。</p><p>6、XML的文件相对难以阅读和解释；与XML相比，JSON的文件非常易于阅读。</p><p>7、JSON不使用结束标记；XML有开始和结束标签。</p><p>8、JSON的安全性较低；XML比JSON更安全。</p><p>9、JSON不支持注释；XML支持注释。</p><p>10、JSON仅支持UTF-8编码；XML支持各种编码。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;1-什么是跨域&quot;&gt;&lt;a href=&quot;#1-什么是跨域&quot; class=&quot;headerlink&quot; title=&quot;1. 什么是跨域?&quot;&gt;&lt;/a&gt;1. 什么是跨域?&lt;/h2&gt;&lt;h2 id=&quot;2-你是怎么解决跨域请求的？&quot;&gt;&lt;a href=&quot;#2-你是怎么解决跨域请求的？&quot;
+        &lt;p&gt;&lt;strong&gt;1. 什么是跨域&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;由于同源策略的限制，浏览器不能执行其他网站的脚本&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;同源策略（same-origin policy)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;1995年，同源策略由netscape公司引入，目前所
       
     
     </summary>
