@@ -371,7 +371,36 @@
 <p>7、JSON不使用结束标记；XML有开始和结束标签。</p>
 <p>8、JSON的安全性较低；XML比JSON更安全。</p>
 <p>9、JSON不支持注释；XML支持注释。</p>
-<p>10、JSON仅支持UTF-8编码；XML支持各种编码。<br><strong>4. 如何理解js中的闭包</strong><br><strong>5. 清除浮动的几种方式</strong><br><strong>6. 如何理解MVVM和MVC</strong> </p>
+<p>10、JSON仅支持UTF-8编码；XML支持各种编码。<br><strong>4. 如何理解js中的闭包</strong><br>js中变量的作用域可以分为全局变量和局部变量，闭包就是能够读取其他函数内部变量的函数，由于在Js语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成”定义在一个函数内部的函数”。</p>
+<p>用途：</p>
+<ol>
+<li>读取函数内部的变量</li>
+<li>让这些变量的值始终保持在内存中</li>
+</ol>
+<p>使用闭包时要注意的点：</p>
+<ol>
+<li>由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE浏览器中可能导致oom,其中的一个解决方法就是在退出函数之前，将不使用的局部变量全部删除</li>
+<li>把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），不要随便改变父函数内部变量的值。</li>
+</ol>
+<p><strong>5. 清除浮动的几种方式</strong></p>
+<ol>
+<li><p>运用clear的方式在需要清浮动的元素下放一个div，并加上<code>clear:both</code> </p>
+</li>
+<li><p>方式是用伪元素<code>:before</code>或<code>:after</code> </p>
+</li>
+<li><p>父级标签overflow:hidden</p>
+</li>
+</ol>
+<p>该方法利用了BFC的特性，当元素有以下特性时，触发BFC</p>
+<ul>
+<li><code>html</code>根元素</li>
+<li><code>float</code>的值不为<code>none</code></li>
+<li><code>overflow</code>的值为hidden、auto或scroll</li>
+<li><code>position</code>的值不为<code>static</code>或<code>relative</code></li>
+<li><code>display</code>的值为<code>table-cell</code>、<code>table-caption</code>、或<code>inline-block</code></li>
+</ul>
+<p><strong>6. 如何理解MVVM和MVC</strong><br>MVVM： 是Model-View-ViewModel的简写。即模型-视图-视图模型。【模型】指的是后端传递的数据。【视图】指的是所看到的页面。【视图模型】mvvm模式的核心，它是连接view和model的桥梁。它有两个方向：一是将【模型】转化成【视图】，即将后端传递的数据转化成所看到的页面。实现的方式是：数据绑定。二是将【视图】转化成【模型】，即将所看到的页面转化成后端的数据。实现的方式是：DOM 事件监听。这两个方向都实现的，我们称之为数据的双向绑定。</p>
+<p>MVC： 是Model-View- Controller的简写。即模型-视图-控制器。M和V指的意思和MVVM中的M和V意思一样。C即Controller指的是页面业务逻辑。使用MVC的目的就是将M和V的代码分离。MVC是单向通信。也就是View跟Model，必须通过Controller来承上启下</p>
 
           
         
