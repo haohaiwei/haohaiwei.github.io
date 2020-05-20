@@ -401,9 +401,24 @@
 </ul>
 <p><strong>6. 如何理解MVVM和MVC</strong><br>MVVM： 是Model-View-ViewModel的简写。即模型-视图-视图模型。【模型】指的是后端传递的数据。【视图】指的是所看到的页面。【视图模型】mvvm模式的核心，它是连接view和model的桥梁。它有两个方向：一是将【模型】转化成【视图】，即将后端传递的数据转化成所看到的页面。实现的方式是：数据绑定。二是将【视图】转化成【模型】，即将所看到的页面转化成后端的数据。实现的方式是：DOM 事件监听。这两个方向都实现的，我们称之为数据的双向绑定。</p>
 <p>MVC： 是Model-View- Controller的简写。即模型-视图-控制器。M和V指的意思和MVVM中的M和V意思一样。C即Controller指的是页面业务逻辑。使用MVC的目的就是将M和V的代码分离。MVC是单向通信。也就是View跟Model，必须通过Controller来承上启下</p>
-<p><strong>7. 谈一谈你对vue的生命周期的理解</strong></p>
-<p><strong>8. 如何理解css中的盒子模型</strong></p>
+<p><strong>7. 谈一谈你对vue生命周期的理解</strong></p>
+<p><strong>beforeCreate</strong>（创建前） 在数据观测和初始化事件还未开始<br><strong>created</strong>（创建后） 完成数据观测，属性和方法的运算，初始化事件，$el属性还没有显示出来<br>beforeMount（载入前） 在挂载开始之前被调用，相关的render函数首次被调用。实例已完成以下的配置：编译模板，把data里面的数据和模板生成html。注意此时还没有挂载html到页面上。</p>
+<p><strong>mounted</strong>（载入后） 在el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用。实例已完成以下的配置：用上面编译好的html内容替换el属性指向的DOM对象。完成模板中的html渲染到html页面中。此过程中进行ajax交互。</p>
+<p><strong>beforeUpdate</strong>（更新前） 在数据更新之前调用，发生在虚拟DOM重新渲染和打补丁之前。可以在该钩子中进一步地更改状态，不会触发附加的重渲染过程。<br><strong>updated</strong>（更新后） 在由于数据更改导致的虚拟DOM重新渲染和打补丁之后调用。调用时，组件DOM已经更新，所以可以执行依赖于DOM的操作。然而在大多数情况下，应该避免在此期间更改状态，因为这可能会导致更新无限循环。该钩子在服务器端渲染期间不被调用。<br><strong>beforeDestroy</strong>（销毁前） 在实例销毁之前调用。实例仍然完全可用。<br><strong>destroyed</strong>（销毁后） 在实例销毁之后调用。调用后，所有的事件监听器会被移除，所有的子实例也会被销毁。该钩子在服务器端渲染期间不被调用。</p>
+<p><strong>8. 如何理解css中的盒模型</strong></p>
+<p>盒子模型有两种，分别是IE盒子模型和标准 w3c 盒子模型</p>
+<p>标准盒子模型：</p>
+<p>包括 margin、border、padding、content，并且 content 部分不包含其他部分</p>
+<p>IE盒子模型：</p>
+<p>包括 margin、border、padding、content，和标准盒子模型不同的是：IE 盒子模型的 content 部分包含了 border 和 pading</p>
 <p><strong>9. http中GET和POST的区别</strong></p>
+<p>1.get传参方式是通过地址栏URL传递，是可以直接看到get传递的参数，post传参方式参数URL不可见，get把请求的数据在URL后通过？连接，通过&amp;进行参数分割。psot将参数存放在HTTP的包体内</p>
+<p>2.get传递数据是通过URL进行传递，对传递的数据长度是受到URL大小的限制，URL最大长度是2048个字符。post没有长度限制</p>
+<p>3.get后退不会有影响，post后退会重新进行提交</p>
+<p>4.get请求可以被缓存，post不可以被缓存</p>
+<p>5.get请求只URL编码，post支持多种编码方式</p>
+<p>6.get请求的记录会留在历史记录中，post请求不会留在历史记录</p>
+<p>7.get只支持ASCII字符，post没有字符类型限制</p>
 
           
         
