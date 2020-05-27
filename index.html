@@ -561,8 +561,84 @@
 <p><strong>2. 你碰到最难的问题是什么，如何解决的</strong></p>
 <p><strong>3. 你是如何解决跨域问题的</strong></p>
 <h1 id="vue专题"><a href="#vue专题" class="headerlink" title="vue专题"></a>vue专题</h1><p><strong>1. 父组件向子组件传值的方法</strong></p>
+<ul>
+<li>props传值，这里注意一个问题，传过来的值需要用watch监听并赋值，否则这里获取到的是空数组</li>
+<li>通过ref属性，父组件调用子组件的方法，把要传的数组作为参数传给子组件，子组件获取该参数，并使用</li>
+</ul>
 <p><strong>2. Vuex有哪几种属性</strong></p>
-<p>**3. v-if 和 v-show有什么区别</p>
+<p>有五种,分别是State , Getter , Mutation , Action , Module (就是mapAction)</p>
+<p><strong>3. v-if 和 v-show有什么区别</strong></p>
+<ul>
+<li>实现方式</li>
+</ul>
+<ul>
+<li>vue-show本质就是标签display设置为none，控制隐藏</li>
+<li>vue-if是动态的向DOM树内添加或者删除DOM元素</li>
+</ul>
+<ul>
+<li>编译的区别</li>
+</ul>
+<ul>
+<li>v-show其实就是在控制css</li>
+<li>v-if切换有一个局部编译/卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件</li>
+</ul>
+<ul>
+<li>编译的条件</li>
+</ul>
+<ul>
+<li>v-show都会编译，初始值为false，只是将display设为none，但它也编译了</li>
+<li>v-if初始值为false，就不会编译了</li>
+</ul>
+<ul>
+<li>性能</li>
+</ul>
+<ul>
+<li>v-show只编译一次，后面其实就是控制css，而v-if不停的销毁和创建，故v-show性能更好一点。</li>
+</ul>
+<h1 id="react专题"><a href="#react专题" class="headerlink" title="react专题"></a>react专题</h1><p><strong>1. react中key的作用</strong></p>
+<p>key是React中用于追踪哪些列表中元素被修改、删除或者被添加的辅助标识。在diff算法中，key用来判断该元素节点是被移动过来的还是新创建的元素，减少不必要的元素重复渲染。<br><strong>2. sass和less的区别</strong></p>
+<ul>
+<li>符号不同</li>
+</ul>
+<ul>
+<li>less是用@，sass使用$</li>
+</ul>
+<ul>
+<li>作用域不同</li>
+</ul>
+<ul>
+<li>less在全局定义，就作用在全局，在代码块中定义，就作用于整哥代码块。而sass只作用域全局。</li>
+</ul>
+<ul>
+<li>编译环境不同<br>less在开发者环境编译，sass在服务器环境下编译。</li>
+</ul>
+<p><strong>3. react生命周期及相关用法</strong></p>
+<ul>
+<li><p>react生命周期分为初始化阶段、运行阶段、销毁阶段。</p>
+</li>
+<li><p>初始化阶段：</p>
+</li>
+</ul>
+<ul>
+<li>componentWillMount：实例挂载之前</li>
+<li>Render：渲染组件</li>
+<li>componentDidMount：实例挂载完成。一般在这个函数中与后台进行初始化数据交互。</li>
+</ul>
+<ul>
+<li>运行阶段：</li>
+</ul>
+<ul>
+<li>componentWillReceiveProps：父组件改变时调用。</li>
+<li>sholudComponentUpdate：主要是用来手动阻止组件渲染，一般在这个函数中做组件的性能优化。</li>
+<li>componentWillUpdate：组件数据更新前调用</li>
+<li>componentDidUpdate：组件数据更新完成时调用</li>
+</ul>
+<ul>
+<li>销毁阶段：</li>
+</ul>
+<ul>
+<li>componentUnmount：销毁阶段。一般用来销毁不用的变量或者是解除无用定时器以及解绑无用事件。防止内存泄漏问题。</li>
+</ul>
 
           
         
